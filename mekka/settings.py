@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'facturations',
     'rest_framework',
-     'corsheaders',
+    'corsheaders',
+    'pyfcm',
 ]
 
 MIDDLEWARE = [
