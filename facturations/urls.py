@@ -37,5 +37,8 @@ urlpatterns = [
     path('customer/marchand/create', CustomerCreateMarchand.as_view(), name='customer_marchand_create'),
     path('agent/login',AgentApiLogin.as_view(), name='agent_api_login'),
     path('agent/token',agent_api.AgentTokenAPI.as_view(), name='agent_api_token'),
+
+
+    path('agentfilevault/login',customer_api.AgentFileVaultLoginPassword.as_view(), name='agent_file_vault_api_login'),
     
 ]

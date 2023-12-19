@@ -88,3 +88,11 @@ class Agent(models.Model):
 
     def __str__(self):
         return self.name
+    
+class AgentFileVault(models.Model):
+    user_name = models.CharField(max_length=100,unique=True)
+    password = models.CharField(max_length=128)
+    # Add any other fields you need for the customer model
+
+    def __str__(self):
+        return self.name

@@ -4,7 +4,7 @@ from .models import *
 class InvoiceProductInline(admin.TabularInline):
     model = InvoiceProduct
     extra = 1
-
+""" 
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('number', 'date', 'customer', 'total_amount','payed')
@@ -12,17 +12,20 @@ class InvoiceAdmin(admin.ModelAdmin):
     search_fields = ('number', 'customer__name')
     inlines = [InvoiceProductInline]
     def total_amount(self,obj):
-        return f"{obj.calculate_total_amount()} $"
+        return f"{obj.calculate_total_amount()} $" """
     
 
 
-@admin.register(Product)
+@admin.register(AgentFileVault)
+class AgentFileVaultAdmin(admin.ModelAdmin):
+    list_display = ('user_name',)
+""" @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name','price')
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('name','phone','email')
+    list_display = ('name','phone','email') """
 
 admin.site.register(InvoiceProduct)
 admin.site.register(Corporate)

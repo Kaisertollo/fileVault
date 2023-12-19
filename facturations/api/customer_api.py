@@ -88,4 +88,17 @@ class CustomerLoginPassword(APIView):
                 return Response({'id':0,'code':"FAILURE"})
         else:
             return Response({'id':0,'code':"FAILURE"})
+        
+class AgentFileVaultLoginPassword(APIView):
+    def post(self, request):
+        user = request.data.get('userName')
+        pwd = request.data.get('pwd')
+        a = AgentFileVault.objects.filter(user_name = user).first()
+        if a:
+            if a.pwd == pwd:
+                return Response({'id':a.id,'code':"succes"})
+            else:
+                return Response({'id':0,'code':"Mot de pas incorrect"})
+        else:
+            return Response({'id':0,'code':"L'utilisateur n'existe pas"})
 
