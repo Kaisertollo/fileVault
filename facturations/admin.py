@@ -30,6 +30,6 @@ class ProductAdmin(admin.ModelAdmin):
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('name','phone','email') """
 
-admin.site.register(InvoiceProduct)
-admin.site.register(Corporate)
-admin.site.register(Agent)
+#admin.site.register(InvoiceProduct)
+#admin.site.register(Corporate)
+#admin.site.register(Agent)
