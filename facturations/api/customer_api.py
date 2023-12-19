@@ -105,7 +105,7 @@ class AgentFileVaultLoginPassword(APIView):
 
 class FileAll(APIView):
     def get(self, request):
-        files= Files.objects.all()
+        files= File.objects.all()
         # Convert the customer data to JSON or any desired format
         data = [{'id':file.id,'name': file.name, 'url': file.url} for file in files]
         return Response(data)
