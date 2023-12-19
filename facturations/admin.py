@@ -19,6 +19,9 @@ class InvoiceAdmin(admin.ModelAdmin):
 @admin.register(AgentFileVault)
 class AgentFileVaultAdmin(admin.ModelAdmin):
     list_display = ('user_name',)
+@admin.register(File)
+class FileVaultAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 """ @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name','price')

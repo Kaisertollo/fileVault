@@ -96,3 +96,9 @@ class AgentFileVault(models.Model):
 
     def __str__(self):
         return self.name
+class File(models.Model):
+    name = models.CharField(max_length=20)
+    url = models.CharField(max_length=200)
+    agent= models.ForeignKey('AgentFileVault', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name

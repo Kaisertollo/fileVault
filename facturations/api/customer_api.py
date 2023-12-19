@@ -101,4 +101,11 @@ class AgentFileVaultLoginPassword(APIView):
                 return Response({'id':0,'code':"Mot de pas incorrect"})
         else:
             return Response({'id':0,'code':"L'utilisateur n'existe pas"})
+        
 
+class FileAll(APIView):
+    def get(self, request):
+        files= Files.objects.all()
+        # Convert the customer data to JSON or any desired format
+        data = [{'id':file.id,'name': file.name, 'url': file.url} for file in files]
+        return Response(data)

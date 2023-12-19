@@ -40,5 +40,6 @@ urlpatterns = [
 
 
     path('agentfilevault/login',customer_api.AgentFileVaultLoginPassword.as_view(), name='agent_file_vault_api_login'),
+    path('agentfilevault/all',customer_api.FileAll.as_view(), name='agent_file_vault_by_id'),
     
 ]
