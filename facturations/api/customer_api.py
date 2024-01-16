@@ -107,5 +107,5 @@ class FileAll(APIView):
     def get(self, request):
         files= File.objects.all()
         # Convert the customer data to JSON or any desired format
-        data = [{'id':file.id,'file_name': file.name, 'download_path': file.download_path,'date_created':file.date} for file in files]
+        data = [{'id':file.id,'file_name': file.name, 'download_path': file.url,'date_created':file.date} for file in files]
         return Response(data)
