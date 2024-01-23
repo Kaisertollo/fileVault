@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+import datetime
+
 import json
 from facturations.utils import generate_code,Send_wp,hashPassword
 
@@ -107,5 +109,5 @@ class FileAll(APIView):
     def get(self, request):
         files= File.objects.all()
         # Convert the customer data to JSON or any desired format
-        data = [{'id':file.id,'file_name': file.name, 'download_path': file.url,'date_created':file.date} for file in files]
+        data = [{'id':file.id,'fileName': file.name, 'downloadPath': file.url,'lastModifyDate':datetime.datetime.strptime(file.date, "%Y-%m-%d").timestamp()} for file in files]
         return Response(data)
